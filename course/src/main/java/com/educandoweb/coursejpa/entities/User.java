@@ -1,6 +1,7 @@
 package com.educandoweb.coursejpa.entities;
 
 import jakarta.persistence.*;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.Objects;

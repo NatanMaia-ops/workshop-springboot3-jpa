@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 @Configuration
 @Profile("test")
-@ComponentScan("com.educandoweb.coursejpa")
+@ComponentScan(basePackages = "com.educandoweb.coursejpa")
 public class TestConfig implements CommandLineRunner {
 
     @Autowired
