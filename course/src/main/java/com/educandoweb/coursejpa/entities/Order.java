@@ -1,5 +1,6 @@
 package com.educandoweb.coursejpa.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -15,6 +16,8 @@ public class Order implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss 'Z'", shape = JsonFormat.Shape.STRING, timezone = "GMT")
+    //formatando data no formato ISO 8601 definindo o padrão e shape
     private Instant moment;
 
     @ManyToOne

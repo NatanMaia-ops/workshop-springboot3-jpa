@@ -1,5 +1,6 @@
 package com.educandoweb.coursejpa.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +23,8 @@ public class User implements Serializable {
     private String password;
 
     @OneToMany(mappedBy = "client")//do outro lado ele esta mapeado pelo atributo client
+    @JsonIgnore//Usamos essa notação para evitar loop infinito por causa da relação de mão dupa entre Order e User
+    //so precisamos colocar essa notação em um dos lados da relação para funcionar
     private List<Order> orders = new ArrayList<>();
 
     public User() {
